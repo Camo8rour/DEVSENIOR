@@ -1,3 +1,4 @@
+package MODULO1.Clase01;
 import java.util.Scanner;
 
 public class MostrarPalabras {
