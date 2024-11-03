@@ -1,4 +1,4 @@
-package MODULO1.Clase02;
+package Modulo1.Clase02;
 public class Ejercicio1 {
     public static void main(String[] args) {
         //ENUNCIADO: El orden de los operadores aritméticos es muy importante ya que dependiendo del orden obtenemos un resultado u otro. En programación, el orden de los operadores es el mismo que el utilizado en matemáticas.

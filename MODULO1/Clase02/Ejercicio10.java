@@ -1,4 +1,4 @@
-package MODULO1.Clase02;
+package Modulo1.Clase02;
 import java.util.Scanner;
 
 public class Ejercicio10 {
