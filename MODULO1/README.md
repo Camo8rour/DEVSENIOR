@@ -5,3 +5,5 @@
 ## Clase 1️⃣: **Introducción a Java**
 
 ## Clase 2️⃣: **Variables, tipos de datos y operadores. Operadores aritméticos, relacionales y lógicos.**
+
+## Clase 3️⃣: **Estructuras de Control de Flujo.**
