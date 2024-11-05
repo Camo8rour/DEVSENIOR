@@ -13,5 +13,19 @@ public class Ejercicio20 {
         | B | N | B | N | B | N | B | N |
         | N | B | N | B | N | B | N | B |
         donde N representa al cuadro negro y B representa al cuadro blanco.*/
+
+        for (int f = 0; f < 8; f++){
+
+            for (int c = 0; c < 8; c++){
+                if ((f + c) %2 == 0) {
+                    System.out.print("| B ");
+                }else{
+                    System.out.print("| N ");
+                }
+            }
+
+            System.out.printf("|%n");
+
+        }
     }
 }
