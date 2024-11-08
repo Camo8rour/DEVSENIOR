@@ -44,4 +44,4 @@ Genera la tabla de multiplicar de un número dado.
 Calcula el IMC a partir del peso y la altura, clasificando el resultado en categorías.
 
 ## [Ejercicio 12](Ejercicio12.java) - Conversión de Segundos ⏱️
-Convierte una cantidad de segundos en días, horas, minutos y segundos.
+Convierte una cantidad de segundos en días, horas, minutos y segundos (Lo realice de dos formas la fácil y la difícil).
