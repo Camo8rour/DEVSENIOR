@@ -19,10 +19,11 @@ public class Triqui {
         var counter = 0;
         var isFinish = false;
         var board = inicializeBoard();
-        showBoard(board);
 
         do {
-            System.out.printf("Jugador %c ingres tu movimiento: %n", player);
+            showBoard(board);
+
+            System.out.printf("Jugador %c ingresa tu movimiento: %n", player);
             System.out.println("Fila (1-3): ");
             var row = sc.nextInt() - 1;
             System.out.println("Columna (1-3): ");
@@ -91,7 +92,7 @@ public class Triqui {
             for (int u = 0; u < board[i].length; u++) {
                 System.out.print(board[i][u]);
                 if (u < board[i].length - 1) {
-                    System.out.println('|');
+                    System.out.print('|');
                 }
             }
 
