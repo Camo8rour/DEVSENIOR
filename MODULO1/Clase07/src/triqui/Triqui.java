@@ -13,9 +13,32 @@ public class Triqui {
             Sino
             Cambia de jugador
             Volver al paso 3.*/
+            
         var sc = new Scanner(System.in);
 
-        var player = 'X';
+        var player = 'O';
+        int menu;
+
+        do {
+            player = changePlayer(player);
+            showGame(sc, player);
+            sc.nextLine();
+
+            pressEnter(sc);
+
+            System.out.println("Desea volver a jugar?");
+            System.out.println("1. Si");
+            System.out.println("2. No");
+            menu = sc.nextInt();
+
+        } while (menu == 1);
+
+        System.out.println("Gracias por jugar triqui, see you later.");
+
+        sc.close();
+    }
+
+    private static void showGame(Scanner sc, char player) {
         var counter = 0;
         var isFinish = false;
         var board = inicializeBoard();
@@ -24,9 +47,9 @@ public class Triqui {
             showBoard(board);
 
             System.out.printf("Jugador %c ingresa tu movimiento: %n", player);
-            System.out.println("Fila (1-3): ");
+            System.out.print("Fila (1-3): ");
             var row = sc.nextInt() - 1;
-            System.out.println("Columna (1-3): ");
+            System.out.print("Columna (1-3): ");
             var column = sc.nextInt() - 1;
 
             if (makeMove(board, row, column, player)) {
@@ -34,11 +57,11 @@ public class Triqui {
 
                 if (checkWinner(board, player)) {
                     showBoard(board);
-                    System.out.printf("El jugador %c ha ganado.", player);
+                    System.out.printf("El jugador %c ha ganado.%n", player);
 
                     isFinish = true;
                 } else {
-                    player = player == 'X' ? 'O' : 'X';
+                    player = changePlayer(player);
                 }
 
             } else {
@@ -51,8 +74,6 @@ public class Triqui {
             }
 
         } while (!isFinish);
-
-        sc.close();
     }
 
     private static boolean checkWinner(char[][] board, char player) {
@@ -113,5 +134,14 @@ public class Triqui {
         }
 
         return board;
+    }
+
+    private static void pressEnter(Scanner reqPress) {
+        System.out.printf("%nOprima ENTER para continuar.%n");
+        reqPress.nextLine();
+    }
+
+    private static char changePlayer(char inPlayer) {
+        return inPlayer == 'O' ? 'X' : 'O';
     }
 }
