@@ -1,4 +1,4 @@
-package triqui;
+package ejercicios.triqui;
 
 import java.util.Scanner;
 
@@ -14,31 +14,31 @@ public class Triqui {
             Cambia de jugador
             Volver al paso 3.*/
             
-        var sc = new Scanner(System.in);
+        var request = new Scanner(System.in);
 
         var player = 'O';
         int menu;
 
         do {
             player = changePlayer(player);
-            showGame(sc, player);
-            sc.nextLine();
+            showGame(request, player);
+            request.nextLine();
 
-            pressEnter(sc);
+            pressEnter(request);
 
             System.out.println("Desea volver a jugar?");
             System.out.println("1. Si");
             System.out.println("2. No");
-            menu = sc.nextInt();
+            menu = request.nextInt();
 
         } while (menu == 1);
 
         System.out.println("Gracias por jugar triqui, see you later.");
 
-        sc.close();
+        request.close();
     }
 
-    private static void showGame(Scanner sc, char player) {
+    private static void showGame(Scanner showRequest, char player) {
         var counter = 0;
         var isFinish = false;
         var board = inicializeBoard();
@@ -48,9 +48,9 @@ public class Triqui {
 
             System.out.printf("Jugador %c ingresa tu movimiento: %n", player);
             System.out.print("Fila (1-3): ");
-            var row = sc.nextInt() - 1;
+            var row = showRequest.nextInt() - 1;
             System.out.print("Columna (1-3): ");
-            var column = sc.nextInt() - 1;
+            var column = showRequest.nextInt() - 1;
 
             if (makeMove(board, row, column, player)) {
                 counter++;
@@ -136,9 +136,9 @@ public class Triqui {
         return board;
     }
 
-    private static void pressEnter(Scanner reqPress) {
+    private static void pressEnter(Scanner pressRequest) {
         System.out.printf("%nOprima ENTER para continuar.%n");
-        reqPress.nextLine();
+        pressRequest.nextLine();
     }
 
     private static char changePlayer(char inPlayer) {
