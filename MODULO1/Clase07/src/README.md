@@ -4,10 +4,11 @@ Este repositorio contiene tres juegos clásicos implementados en Java: **Triqui*
 
 ## Archivos del proyecto:
 
-- **App.java**: Archivo principal que enlaza y ejecuta los tres juegos dependiendo la conidición seleccionada.
-- **Carpeta "triqui"**: Contiene el archivo [Triqui.java](Triqui.java) que implementa el juego de **Triqui**.
-- **Carpeta "ahorcado"**: Contiene el archivo [Ahorcado.java](Ahorcado.java) que implementa el juego del **Ahorcado**.
-- **Carpeta "conecta_4"**: Contiene el archivo [Conecta_4.java](Conecta_4.java) que implementa el juego de **Conecta 4**.
+- **App.java**: Archivo principal que enlaza y ejecuta los tres juegos dependiendo de la condición seleccionada.
+- **Carpeta "ejercicios"**: Contiene los archivos correspondientes a los tres juegos implementados.
+  - **ejercicios/triqui**: Contiene el archivo [Triqui.java](ejercicios/triqui/Triqui.java) que implementa el juego de **Triqui** (Tic-Tac-Toe).
+  - **ejercicios/ahorcado**: Contiene el archivo [Ahorcado.java](ejercicios/ahorcado/Ahorcado.java) que implementa el juego del **Ahorcado**.
+  - **ejercicios/conecta_4**: Contiene el archivo [Conecta_4.java](ejercicios/conecta_4/Conecta_4.java) que implementa el juego de **Conecta 4**.
 
 ---
 
@@ -71,10 +72,11 @@ _Tomado de [Conecta 4](https://es.wikipedia.org/wiki/Conecta_4) en Wikipedia._
 ## 📂 Estructura de Archivos
 
 ```plaintext
-├── App.java                # Archivo principal que ejecuta los tres juegos
-├── triqui
-│   └── Triqui.java         # Implementación del juego Triqui (Tic-Tac-Toe)
-├── ahorcado
-│   └── Ahorcado.java      # Implementación del juego Ahorcado
-└── conecta_4
-    └── Conecta_4.java     # Implementación del juego Conecta 4
+├── App.java                          # Archivo principal que ejecuta los tres juegos.
+├── ejercicios/                        # Carpeta que contiene los juegos.
+│   ├── triqui/                         # Carpeta para el juego triqui.
+│   │   └── Triqui.java                  # Implementación del juego Triqui.
+│   ├── ahorcado/                       # Carpeta para el juego ahorcado.
+│   │   └── Ahorcado.java                # Implementación del juego Ahorcado.
+│   └── conecta_4/                      # Carpeta para el juego conecta 4.
+│       └── Conecta_4.java               # Implementación del juego Conecta 4.
