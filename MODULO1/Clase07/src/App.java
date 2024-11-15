@@ -12,9 +12,9 @@ public class App {
 
         byte menu;
 
-        System.out.println("---------------");
+        System.out.printf("%n----------------------%n");
         System.out.println("\t MENÚ");
-        System.out.println("---------------");
+        System.out.println("----------------------");
         System.out.println("1. Jugar tiqui.");
         System.out.println("2. Jugar ahorcado.");
         System.out.println("3. Jugar conecta 4.");
