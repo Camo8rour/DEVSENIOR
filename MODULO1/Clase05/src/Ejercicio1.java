@@ -7,7 +7,6 @@ public class Ejercicio1 {
 
         // - Invertir por completo el array.
         // - Ordenar el array de mayor a menor.
-        // - Obtener el promedio de los elementos del array.
         // - Encontrar la moda (el número que mas se repite)
         System.out.printf("%nIngrese un número entero (tamaño del array): ");
         int size = request.nextInt();
@@ -31,12 +30,31 @@ public class Ejercicio1 {
             sum += number[i];
         }
 
-        float average = sum / size;
+        int left = 0;
+        int right = number.length -1;
 
-        System.out.printf("La suma de todos los números es: %d.%n", sum);
-        System.out.printf("El valor máximo  ingresado es: %d.%n", elderly);
-        System.out.printf("El valor mínimo ingresado es: %d.%n", less);
-        System.out.printf("El promedio de todos los números es: %.2f.%n", average);
+        while (left < right) {
+            int temp = number[left];
+            number[left] = number[right];
+            number[right] = temp;
+
+            left ++;
+            right --;
+        }
+
+        System.out.print("Números ingresados en la posicion invertida: ");
+
+        for (int num : number) {
+            System.out.printf("%d ", num);
+        }
+        
+
+        float average = (float) sum / size;
+
+        System.out.printf("Suma de todos los números: %d.%n", sum);
+        System.out.printf("Valor máximo  ingresado: %d.%n", elderly);
+        System.out.printf("Valor mínimo ingresado: %d.%n", less);
+        System.out.printf("Promedio de todos los números: %.2f.%n", average);
 
 
         request.close();
