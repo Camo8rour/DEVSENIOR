@@ -1,29 +1,31 @@
-public class Student {
-
+public class Student { 
     String name;
     int age;
     float average;
 
-    public Student(){
+    // Constructor por defecto
+    public Student() {
         name = "N/A";
         age = 0;
         average = 0;
     }
 
-    public Student(String name, int age, float average){
+    // Constructor con parámetros
+    public Student(String name, int age, float average) {
         this.name = name;
         this.age = age;
         this.average = average;
     }
 
-    public  void mostrarDetalles(){
-        System.out.printf("Nombre: " + name);
-        System.out.printf("Edad: " + age);
-        System.out.printf("Promedio: " + average);
+    // Método para mostrar detalles del estudiante
+    public void mostrarDetalles() {
+        System.out.println("Nombre: " + name);
+        System.out.println("Edad: " + age);
+        System.out.println("Promedio: " + average);
     }
 
+    // Método para verificar si está aprobado
     public boolean esAprobado() {
         return average >= 3.0;
     }
-
 }

@@ -19,15 +19,19 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        // Lista de estudiantes
         List<Student> students = new ArrayList<>();
 
-        students.add(new Student("Camilo", 20, 4.5));
-        students.add(new Student("Laura", 22, 3.8));
-        students.add(new Student("Andrés", 19, 2.5));
+        // Estudiantes de la lista
+        students.add(new Student("Juan Pérez", 15, 4.2f));
+        students.add(new Student("María López", 14, 2.8f));
+        students.add(new Student("Carlos Gómez", 16, 3.5f));
 
-        for (Student estudiante : students) {
-            estudiante.mostrarDetalles();
-            System.out.println("¿Está aprobado?: " + (estudiante.esAprobado() ? "Sí" : "No"));
+        // Información de todos los estudiantes
+        for (Student student : students) {
+            student.mostrarDetalles();
+            System.out.println("¿Está aprobado?: " + (student.esAprobado() ? "Sí" : "No"));
             System.out.println();
         }
     }
