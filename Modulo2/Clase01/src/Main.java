@@ -29,6 +29,7 @@ public class Main {
         students.add(new Student("Carlos Gómez", 16, 3.5f));
 
         // Información de todos los estudiantes
+        System.out.printf("%n*****DETALLES DE ESTUDIANTES*****%n");
         for (Student student : students) {
             student.mostrarDetalles();
             System.out.println("¿Está aprobado?: " + (student.esAprobado() ? "Sí" : "No"));
