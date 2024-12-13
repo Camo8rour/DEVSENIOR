@@ -1,18 +1,42 @@
-## Getting Started
+# 🚗 Gestión de Vehículos 🏍️
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este sistema permite gestionar diferentes tipos de vehículos utilizando los conceptos de programación orientada a objetos. 🚀
 
-## Folder Structure
+## 📋 Descripción
 
-The workspace contains two folders by default, where:
+En este ejercicio, implementamos una estructura de clases en Java para gestionar diferentes tipos de vehículos, aplicando principios fundamentales como la herencia, encapsulación y métodos sobrescritos. Cada tipo de vehículo tiene características únicas y detalles que podemos mostrar fácilmente.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## 🛠️ Estructura del Código
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### 📂 Clases
 
-## Dependency Management
+1. **Clase Base: `Vehiculo`** 🚘
+   - **Atributos:**
+     - `marca`: Marca del vehículo.
+     - `modelo`: Modelo del vehículo.
+     - `velocidadMaxima`: Velocidad máxima del vehículo.
+   - **Métodos:**
+     - Constructor para inicializar los atributos.
+     - `mostrarDetalles()`: Imprime detalles del vehículo.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+2. **Clases Derivadas:**
+   - **`Carro`** 🚗
+     - Atributo adicional: `numPuertas` (Número de puertas del carro).
+   - **`Moto`** 🏍️
+     - Atributo adicional: `tieneSidecar` (Indica si la moto tiene sidecar).
+
+### 🖥️ Clase Principal: `Main`
+
+- Creamos objetos de tipo `Carro` y `Moto`.
+- Mostramos los detalles con el método `mostrarDetalles()`.
+- Representación en texto del objeto `toString()`.
+
+---
+
+## 🌟 Funcionalidades
+
+- **Encapsulación:** Uso de getters y setters para los atributos.
+- **Herencia:** Clases derivadas (`Carro` y `Moto`) que extienden de la clase base `Vehiculo`.
+- **Sobrescritura:** Métodos como `toString()` y `equals()` implementados en las clases para personalizar su comportamiento.
