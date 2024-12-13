@@ -24,16 +24,16 @@ public class Main {
         List<Student> students = new ArrayList<>();
 
         // Estudiantes de la lista
-        students.add(new Student("Juan Pérez", 15, 4.2f));
-        students.add(new Student("María López", 14, 2.8f));
-        students.add(new Student("Carlos Gómez", 16, 3.5f));
+        students.add(new Student("Juan Pérez", 15, 42.0f));
+        students.add(new Student("María López", 14, 28.0f));
+        students.add(new Student("Carlos Gómez", 16, 35.0f));
 
-        // Información de todos los estudiantes
+        // Información de todos los estudiantes y operador terniario para evaluar si es aprovado o no.
         System.out.printf("%n*****DETALLES DE ESTUDIANTES*****%n");
         for (Student student : students) {
             student.mostrarDetalles();
             System.out.println("¿Está aprobado?: " + (student.esAprobado() ? "Sí" : "No"));
-            System.out.println();
+            System.out.println("*********************************");
         }
     }
 }

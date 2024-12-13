@@ -19,6 +19,6 @@ public class Student {
 
     // Método para verificar si está aprobado
     public boolean esAprobado() {
-        return average >= 3.0;
+        return average >= 30.0;
     }
 }
