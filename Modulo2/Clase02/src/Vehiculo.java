@@ -16,4 +16,12 @@ public class Vehiculo {
         System.out.printf("Modelo: %d.%n", modelo);
         System.out.printf("Velocidad máxima: %.2f.%n", velocidadMaxima);
     }
+
+    private  void getVehiculo(){
+    
+    }
+
+    private  void setVehiculo(){
+    
+    }
 }
