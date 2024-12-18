@@ -3,18 +3,17 @@ public class TarjetaCredito implements MetodoPago{
     //monto mayor > 0;
     @Override
     public void procesarPago(double monto) {
-        monto = 0;
-        System.out.println("Monto total: " + monto);
+        System.out.println("Pago procesado con tarjeta de crédito por un monto de $" + monto + ".");
     }
 
     @Override
     public String obtenerDetalles() {
-            return null;
+            return "Se realizo el pago con la targeta de crédito";
     }
 
     @Override
     public boolean validarMonto(double monto) {
-            return false;
+            return monto > 0;
     }
 
 }

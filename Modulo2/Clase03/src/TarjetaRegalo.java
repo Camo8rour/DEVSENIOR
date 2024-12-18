@@ -3,19 +3,17 @@ public class TarjetaRegalo implements MetodoPago{
     //monto mayor > 0 && <= 500; y menor o igual
     @Override
     public void procesarPago(double monto) {
-        monto = 40;
-        System.out.println("Monto total: " + monto);}
+        System.out.println("Pago procesado con tarjeta de regalo por un monto de $" + monto + ".");
+    }
 
     @Override
     public String obtenerDetalles() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'obtenerDetalles'");
+        return "Se realizo el pago con tarjeta de regalo";
     }
 
     @Override
     public boolean validarMonto(double monto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'validarMonto'");
+        return monto > 0 && monto <= 500;
     }
 
 }
