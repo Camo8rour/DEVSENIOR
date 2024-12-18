@@ -3,12 +3,12 @@ public class TarjetaRegalo implements MetodoPago{
     //monto mayor > 0 && <= 500; y menor o igual
     @Override
     public void procesarPago(double monto) {
-        System.out.println("Pago procesado con tarjeta de regalo por un monto de $" + monto + ".");
+        System.out.printf("%nPago procesado con tarjeta de regalo por un monto de $%s.", monto);
     }
 
     @Override
     public String obtenerDetalles() {
-        return "Se realizo el pago con tarjeta de regalo";
+        return "Se realizó el pago con tarjeta de regalo";
     }
 
     @Override

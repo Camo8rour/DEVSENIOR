@@ -16,12 +16,12 @@ public class Main {
         double[] montos = {100, 5000, 5, 0.002, 300};
 
         for (MetodoPago metodopago : metodosPagos) {
-            System.out.println("\nMétodo de Pago: " + metodopago.obtenerDetalles());
+            System.out.printf("%n\nMétodo de Pago: %s.", metodopago.obtenerDetalles());
             for (double monto : montos) {
                 if (metodopago.validarMonto(monto)) {
                     metodopago.procesarPago(monto);
                 } else {
-                    System.out.println("Monto no válido: " + monto);
+                    System.out.printf("%nMonto no válido: %s.", monto);
                 }
             }
         }
