@@ -20,24 +20,13 @@ public class Ejercicio2 {
         int[][] array = new int[size][size];
 
         //Ingreso de números de la matriz.
-        for (int i = 0; i < size; i++) {
-
-            for (int e = 0; e < size; e++) {
-                cont ++;
-                System.out.printf("Ingrese el número %d: ", cont);
-                array[i][e] = showReq.nextInt();
-            }
-        }
+        enteredArray(showReq, size, cont, array);
         showReq.nextLine();
 
         int[][] rotatedArray = new int[size][size];
 
         // Matriz rotada.
-        for (int i = 0; i < size; i++) {
-            for (int e = 0; e < size; e++) {
-                rotatedArray[e][size - 1 - i] = array[i][e];
-            }
-        }
+        flipArray(size, array, rotatedArray);
 
         System.out.printf("Matriz %dx%d ingresada:%n", size, size);
         arrayView(array);
@@ -48,6 +37,25 @@ public class Ejercicio2 {
         arrayView(rotatedArray);
 
         pressEnter(showReq);
+    }
+
+    private static void enteredArray(Scanner showReq, int size, int cont, int[][] array) {
+        for (int i = 0; i < size; i++) {
+
+            for (int e = 0; e < size; e++) {
+                cont ++;
+                System.out.printf("Ingrese el número %d: ", cont);
+                array[i][e] = showReq.nextInt();
+            }
+        }
+    }
+
+    private static void flipArray(int size, int[][] array, int[][] rotatedArray) {
+        for (int i = 0; i < size; i++) {
+            for (int e = 0; e < size; e++) {
+                rotatedArray[e][size - 1 - i] = array[i][e];
+            }
+        }
     }
 
     private static void arrayView(int[][] array) {
