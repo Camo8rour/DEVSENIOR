@@ -1,3 +1,3 @@
 public interface Notificacion {
-    void enviar();
+    void enviar(String mensaje);
 }
