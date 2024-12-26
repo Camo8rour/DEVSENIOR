@@ -1,18 +1,15 @@
-## Getting Started
+# 🛠️ **Gestión de Notificaciones (Factory)**
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+1. **Implementaciones concretas**:
+   - **CorreoNotificacion** 📧: Imprime el mensaje "Enviando correo: [mensaje]".
+   - **SMSNotificacion** 📱: Imprime el mensaje "Enviando SMS: [mensaje]".
+   - **PushNotificacion** 🔔: Imprime el mensaje "Enviando notificación push: [mensaje]".
+   
+   El **[mensaje]** es un parámetro que se pasa al crear la notificación.
 
-## Folder Structure
+2. **Clase Factory**:
+   - **NotificacionFactory** 🏭: Implementa una fábrica que devuelve el canal adecuado (correo, SMS o push) según un parámetro proporcionado.
 
-The workspace contains two folders by default, where:
+3. **Tipos**:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    - **TipoNotificacion** 🔢: Es un enum que define los tres tipos de notificación disponibles: CORREO, SMS, y PUSH.
