@@ -3,10 +3,16 @@ public class Restaurante {
     private Mesero mesero;
     private Caja caja;
 
-    public Restaurante(Cocina cocina, Mesero mesero, Caja caja) {
-        this.cocina = cocina;
-        this.mesero = mesero;
-        this.caja = caja;
+    public Restaurante() {
+        this.cocina = new Cocina();
+        this.mesero = new Mesero();
+        this.caja = new Caja();
+    }
+
+    public void operarRestaurante() {
+        cocina.prepararPlato();
+        mesero.servir();
+        caja.procesarPago();
     }
 
     public Cocina getCocina() {
@@ -33,9 +39,4 @@ public class Restaurante {
         this.caja = caja;
     }
 
-    public void operarRestaurante() {
-        cocina.prepararPlato();
-        mesero.servir();
-        caja.procesarPago();
-    }
 }
