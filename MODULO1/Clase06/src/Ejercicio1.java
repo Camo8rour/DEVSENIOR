@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Ejercicio1 {
     public static void main(String[] args) throws Exception {
@@ -11,39 +13,75 @@ public class Ejercicio1 {
                 "camisa,1,20.00",
                 "pantalon,2,35.50");
 
-        //Listas con nuevos datos.
-        List<String> productos = new ArrayList<>();
-        List<Integer> cantidades = new ArrayList<>();
-        List<Double> precios_unitario = new ArrayList<>();
+        calculateIncome(ventas); //Ingreso total de ventas.
+        
+        //Ventas por producto.
+        Map<String, Integer> salesProducts = new HashMap<>(); //Mapa que se va a utilizar en el metodo bestSeller.
+        countSales(ventas, salesProducts);
 
-        //Separador de datos.
-        for (String datos : ventas){
-            String[] division = datos.split(",");
+        filterHigherSales(ventas); //Flitro de ventas.
 
-            String producto = division[0];
+        bestSeller(salesProducts); //Producto más vendido.
+
+    }
+
+    private static void calculateIncome(List<String> ventas) {
+        double total_income = 0.0;
+        for (String valores : ventas){
+            String[] division = valores.split(",");
             int cantidad = Integer.parseInt(division[1]);
             double precio_unitario = Double.parseDouble(division[2]);
-
-            productos.add(producto);
-            cantidades.add(cantidad);
-            precios_unitario.add(precio_unitario);  
+            total_income += (cantidad * precio_unitario);
         }
 
-        //Ingreso total de ventas.
-        double total_ventas = 0;
+        System.out.printf("%nIngreso total de las ventas: $%.2f.", total_income);
+    }
 
-        for (double valor : precios_unitario) {
-            total_ventas =+ valor;
+    private static void countSales(List<String> ventas, Map<String, Integer> salesProducts) {
+        for (String valores : ventas){
+            String[] division = valores.split(",");
+            String producto = division[0];
+            int cantidad = Integer.parseInt(division[1]);
+
+            salesProducts.put(producto, salesProducts.getOrDefault(producto, 0) + cantidad);
         }
 
-        System.out.printf("%nIngreso total de las ventas: %d.", total_ventas);
+        System.out.printf("%n%nCANTIDAD DE VENTAS POR PRODUCTO");
+        for (String clave : salesProducts.keySet()) {
+                System.out.printf("%n%s: %d.", clave, salesProducts.get(clave));
+        }
+    }
 
-        //Ventas por productos.
-        for (int i = 0; i < productos.size(); i++) {
-            System.out.printf("%n%nCANTIDAD DE VENTAS POR PRODUCTO");
-            System.out.printf("%n%s: %d.", productos.get(i), cantidades.get(i));
+    private static void filterHigherSales(List<String> ventas) {
+        double specificAmount = 40.00;
+        List<String> filter = new ArrayList<>();
+
+        for (String sale : ventas) {
+            String[] division = sale.split(",");
+            int cantidad = Integer.parseInt(division[1]);
+            double precio_unitario = Double.parseDouble(division[2]);
+            double saleValue = cantidad * precio_unitario;
+
+            if(saleValue > specificAmount){
+                filter.add(sale);
+            }
         }
 
+        System.out.printf("%n%nVENTAS MAYORES A $%s.%n", specificAmount);
+        System.out.println(filter);
+    }
 
+    private static void bestSeller(Map<String, Integer> salesProducts) {
+        String bestSelling = null;
+        int count = 0;
+
+        for (Map.Entry<String, Integer> selling : salesProducts.entrySet()){
+            if(selling.getValue() > count){
+                bestSelling = selling.getKey();
+                count = selling.getValue();
+            }
+        }
+
+        System.out.printf("%nEl producto mas vendido es: %s.", bestSelling);
     }
 }
