@@ -23,27 +23,40 @@ public class Ejercicio2 {
         subjectHighestAverage(calificaciones); // Materia con el promedio mas alto.
     }
 
-    private static void calculateAverage(List<String> calificaciones){
+    private static void calculateAverage(List<String> calificaciones) {
         Map<String, Double> qualificationStudents = new HashMap<>();
 
         for (String qualification : calificaciones) {
             String[] division = qualification.split(",");
             String estudiante = division[0];
             double calificacion = Integer.parseInt(division[2]);
-            qualificationStudents.put(estudiante, qualificationStudents.getOrDefault(estudiante, (double) 0) + calificacion);
+            qualificationStudents.put(estudiante,
+                    qualificationStudents.getOrDefault(estudiante, (double) 0) + calificacion);
         }
 
-        System.out.printf("%n%nPROMEDIO DE ESTIDIANTES");
+        System.out.printf("%n%nPROMEDIO DE ESTIDIANTES:");
         for (String clave : qualificationStudents.keySet()) {
             System.out.printf("%n%s: %.1f.", clave, qualificationStudents.get(clave) / 2);
         }
     }
 
-    private static void studentsSubject(List<String> calificaciones){
-        
+    private static void studentsSubject(List<String> calificaciones) {
+        Map<String, Integer> subjectStudents = new HashMap<>();
+
+        for (String qualification : calificaciones) {
+            String[] division = qualification.split(",");
+            String materia = division[1];
+
+            subjectStudents.put(materia, subjectStudents.getOrDefault(materia, 0) + 1);
+        }
+
+        System.out.printf("%n%nESTUDIANTES POR MATERIA:");
+        for (String clave : subjectStudents.keySet()) {
+            System.out.printf("%n%s: %s.", clave, subjectStudents.get(clave));
+        }
     }
 
-    private static void ratingsFilter(List<String> calificaciones){
+    private static void ratingsFilter(List<String> calificaciones) {
         int specificAmount = 80;
         List<String> filter = new ArrayList<>();
 
@@ -61,6 +74,33 @@ public class Ejercicio2 {
     }
 
     private static void subjectHighestAverage(List<String> calificaciones){
+        Map<String, Double> subjectAverage = new HashMap<>();
+
+        for (String quiali : calificaciones) {
+            String[] division = quiali.split(",");
+            String materia = division[1];
+            Double calificacion = Double.parseDouble(division[2]);
+
+            subjectAverage.put(materia, subjectAverage.getOrDefault(materia, (double) 0) + calificacion);
+        }
+
+           double averageM = 0.0;
+           double averageH = 0.0;
+
+        for (String clave : subjectAverage.keySet()) {
+            if (clave.equals("Matematicas")) {
+                averageM = subjectAverage.get(clave)/3;
+            }else if (clave.equals("Historia")){
+                averageH = subjectAverage.get(clave)/3;
+            }
+        }
+
+        System.out.printf("%n%nMATERIA CON PROMEDIO MÁS ALTO:");
+        if (averageM > averageH) {
+            System.out.printf("%nMatematicas con promedio de %.1f.", averageM);
+        } else {
+            System.out.printf("%nHistoria con promedio de %.1f.", averageH);
+        }
 
     }
 }
