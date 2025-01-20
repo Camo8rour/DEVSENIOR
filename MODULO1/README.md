@@ -43,3 +43,10 @@
 - Referencias a métodos
 - Interfaz funcional
 - API de Streams
+
+### [Clase 07](clase07) - Ejercicio práctico integrador con estructuras de control.
+- Tres en línea.
+- Ahorcado.
+- Conecta 4.
+### [Clase 08](clase08) - Repaso y mini-proyecto básico de Java.
+- Mini-proyecto - Calculadora de Inventario
