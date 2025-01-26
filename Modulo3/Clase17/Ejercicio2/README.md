@@ -17,3 +17,4 @@ Este proyecto está organizado en una estructura de carpetas que facilita la ges
 ## 🔗 Gestión de Dependencias
 
 Visual Studio Code ofrece la vista de `JAVA PROJECTS` para gestionar fácilmente las dependencias del proyecto de Java. 📚 Si necesitas más detalles para entender el funcionamiento, consulta la guía completa [aquí](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
