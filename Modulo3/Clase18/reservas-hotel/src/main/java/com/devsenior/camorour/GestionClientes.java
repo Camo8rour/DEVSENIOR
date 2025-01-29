@@ -17,7 +17,7 @@ public class GestionClientes {
         clientes = new ArrayList<>();
     }
 
-    public void registrarClientes(String id, String nombre){
+    public void registrarCliente(String id, String nombre){
         LOG.trace("Llamando a registar clientes.");
         LOG.debug("Los parametros son: {} {}", id, nombre);
 
@@ -27,7 +27,7 @@ public class GestionClientes {
         LOG.info("Se se registro el cliente.");
     }
 
-    public Cliente buscarClientes(String id){
+    public Cliente buscarCliente(String id){
         LOG.trace("Ingreso a buscar un cliente.");
         LOG.debug("Ingresa con los datos {}", id);
 
@@ -39,4 +39,5 @@ public class GestionClientes {
         LOG.warn("El cliente no fue encontrado.");
         throw new ClienteNoEncontradoException("El cliente con el id " + id + " no fue encontrado.");
     }
+
 }

@@ -26,7 +26,7 @@ public class GestionPedidos {
         try {
             var cliente = clientes.buscarClientes(clienteId);
             LOG.debug("El cliente del pedido es: {}", cliente);
-        } catch (ClienteNoEncontradoExcepcion e) {
+        } catch (ClienteNoEncontradoException e) {
             LOG.warn("El cliente no existe: {}", clienteId);
             throw new PedidoInvalidoException("El cliente no existe");
         }
@@ -53,15 +53,13 @@ public class GestionPedidos {
         LOG.trace("Ingreso a buscar un pedido.");
         LOG.debug("Ingresa con los datos {} {}", clienteId, producto);
 
-        var cliente = clientes.buscarClientes(clienteId);
-
         for (var pedido : pedidos) {
             if (pedido.getClienteId().equals(clienteId) && pedido.getProducto().equals(producto)) {
                 return pedido;
             }
         }
 
-        LOG.warn("El pedido no fue encontrado!");
-        return null;
+        LOG.warn("El pedido no fue encontrado, ya que el cliente no existe!");
+        throw new ClienteNoEncontradoException("El cliente no existe.");
     }
 }

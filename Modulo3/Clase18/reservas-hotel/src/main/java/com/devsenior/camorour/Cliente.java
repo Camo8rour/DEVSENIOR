@@ -3,7 +3,7 @@ package com.devsenior.camorour;
 public class Cliente {
     private String id;
     private String nombre;
-
+    
     public Cliente(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;
@@ -21,5 +21,4 @@ public class Cliente {
     public String toString() {
         return String.format("{id: %s, nombre: %s}", id, nombre);
     }
-
 }

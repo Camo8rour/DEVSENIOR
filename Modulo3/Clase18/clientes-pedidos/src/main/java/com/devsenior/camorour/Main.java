@@ -8,6 +8,8 @@ public class Main {
 
         log.info("Iniciando el programa.");
         var clientes = new GestionClientes();
+        var pedidos = new GestionPedidos(clientes);
+        
         log.debug("Registrando el cliente (1, Pepito)");
         clientes.registrarClientes("1", "Pepito");
         log.info("Se registro el cliente 'Pepito' con id '1'");
@@ -20,7 +22,6 @@ public class Main {
         clientes.registrarClientes("5", "Maria");
         log.info("Se registro el cliente 'Maria' con id '5'");
 
-        var pedidos = new GestionPedidos(clientes);
         try {
             log.debug("Creando el pedido (1, Laptop, 10)");
             pedidos.crearPedido("1", "Laptop", 10);
@@ -39,7 +40,25 @@ public class Main {
             System.err.println("Ha ocurrido un error al gestionar el pedido.\n" + e.getMessage());
         }
 
-        System.out.println("Gracias por nuestro servicio.");
+        try {
+            log.debug("Buscando el cliente (1)");
+            clientes.buscarClientes("1");
+            log.info("Se encontro el cliente (1)");
+        } catch (ClienteNoEncontradoException e) {
+            log.warn("No se pudo encontar el cliente.", e);
+            System.err.println("Ha ocurrido un error al buscar el cliente.\n" + e.getMessage());
+        }
+
+        try {
+            log.debug("Buscando el pedido (1, Laptop)");
+            pedidos.buscarPedido("1", "Laptop");
+            log.info("Se encontro el pedido (1, Laptop)");
+        } catch (ClienteNoEncontradoException e) {
+            log.warn("No se pudo encontar el pedido.", e);
+            System.err.println("Ha ocurrido un error al buscar el pedido.\n" + e.getMessage());
+        }
+
+        System.out.println("Gracias por utilizar nuestro servicio.");
         log.info("Terminando el programa.");
     }
 }
