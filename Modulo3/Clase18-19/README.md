@@ -38,7 +38,7 @@ Permite registrar clientes, crear reservas y buscar reservas.
 
 ### Descripción:
 1. Excepción personalizada _unchecked_ llamada `ClienteNoEncontradoException`, esta excepción se lanza cuando se intenta buscar un cliente que no exista en el sistema.
-2. Clase  (Checked): Excepción personalizada _checked_ llamada `ReservaInvalidaException`, esta excepción se lanzada cuando se intenta crear una reserva con información inválida (por ejemplo, fechas incorrectas o cliente inexistente).
+2. Excepción personalizada _checked_ llamada `ReservaInvalidaException`, esta excepción se lanzada cuando se intenta crear una reserva con información inválida (por ejemplo, fechas incorrectas o cliente inexistente).
 3. Clase llamada `GestionClientes` que contiene métodos para registrar y buscar clientes.
     - Método `registrarCliente(String id, String nombre)` que registra un cliente en el sistema.
     - Método `buscarCliente(String id)` que lanza `ClienteNoEncontradoException` si el cliente no existe.

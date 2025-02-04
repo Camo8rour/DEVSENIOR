@@ -1,5 +1,4 @@
 package com.devsenior.camorour;
-
 public class Product {
     private String name;
     private Integer stock;
