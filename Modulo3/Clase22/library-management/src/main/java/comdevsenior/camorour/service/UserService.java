@@ -31,12 +31,12 @@ public class UserService {
         throw new NotFoundException("No existe un usuario con el id: " + id);
     }
 
-    public void updateEmail(String id, String email) throws NotFoundException {
+    public void updateUserEmail(String id, String email) throws NotFoundException {
         var user = getUserById(id);
         user.setEmail(email);
     }
 
-    public void updateUser(String id, String name) throws NotFoundException {
+    public void updateUserName(String id, String name) throws NotFoundException {
         var user = getUserById(id);
         user.setEmail(name);
     }

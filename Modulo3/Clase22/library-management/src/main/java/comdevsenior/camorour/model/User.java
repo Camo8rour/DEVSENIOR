@@ -28,22 +28,20 @@ public class User {
         return name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public LocalDate getRegisterDate() {
-        return registerDate;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    
+    public LocalDate getRegisterDate() {
+        return registerDate;
+    }
 
 }

@@ -13,10 +13,14 @@ public class Loan {
         this(user, book, LocalDate.now(), LoanState.STARTED);
     }
 
+    public Loan(User user, Book book, LocalDate loanDate) {
+        this(user, book, loanDate, LoanState.STARTED);
+    }
+
     public Loan(User user, Book book, LocalDate loanDate, LoanState state) {
         this.user = user;
         this.book = book;
-        this.localDate = LocalDate.now();
+        this.localDate = loanDate;
         this.state = state;
     }
 

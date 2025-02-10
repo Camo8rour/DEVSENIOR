@@ -10,7 +10,7 @@ public class BookService {
     private List<Book> books;
 
     public BookService() {
-        this.books = new ArrayList<Book>();
+        books = new ArrayList<Book>();
     }
 
     public void addBook(String isbn, String title, String author) {
@@ -37,6 +37,6 @@ public class BookService {
                 return ;
             }
         }
-        throw new NotFoundException("No se borro el libro con el isbn: " + isbn);
+        throw new NotFoundException("No se puede borrar el libro con el isbn: " + isbn);
     }
 }
