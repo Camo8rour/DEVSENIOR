@@ -3,6 +3,7 @@ package comdevsenior.camorour.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.anyString;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -50,6 +51,47 @@ public class LoanServiceTest {
         assertNotNull(loan.getUser());
         assertNotNull(loan.getBook());
         assertEquals(LoanState.STARTED, loan.getState());
+    }
+
+    @DisplayName("Retornar con un usuario y un libro existente")
+    @Test
+    void testReturnBookWithExistingLoan() throws NotFoundException {
+        // GIVEN
+        var id = "1234";
+        var isbn = "1111";
+
+        var userMock = new User(id, "Camilo", "camo321@gmail.com");
+        var bookMock = new Book(isbn, "The Lord of the Rings", "JRR Tolkien");
+
+        Mockito.when(userService.getUserById(anyString())).thenReturn(userMock);
+        Mockito.when(bookService.getBookByIsbn(anyString())).thenReturn(bookMock);
+
+        service.addLoan(id, isbn);
+
+        // WHEN
+        service.returnBook(id, isbn);
+
+        // THEN
+        var loans = service.getLoans();
+        assertEquals(1, loans.size());
+
+        var loan = loans.getFirst();
+        assertEquals(id, loan.getUser().getId());
+        assertEquals(isbn, loan.getBook().getIsbn());
+        assertEquals(LoanState.FINISHED, loan.getState());
+    }
+
+    @DisplayName("Retornar un libro inexistente")
+    @Test
+    void testReturnBookWithNonExistingLoan() throws NotFoundException {
+        // GIVEN
+        var id = "1234";
+        var isbn = "1111";
+
+        // WHEN - THEN
+        assertThrows(NotFoundException.class, () -> {
+            service.returnBook(id, isbn);
+        });
     }
 
     @DisplayName("Intentar agregar un préstamo con un usuario inexistente")

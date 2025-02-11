@@ -26,7 +26,7 @@ public class LoanService {
 
     public void returnBook(String id, String isbn) throws NotFoundException {
         for (var loan : loans) {
-            if (loan.getUser().getId().equals(id) && loan.getBook().getIsbn().equals(isbn) && loan.getLoanDate().equals(LoanState.STARTED)) {
+            if (loan.getUser().getId().equals(id) && loan.getBook().getIsbn().equals(isbn) && loan.getState().equals(LoanState.STARTED)) {
                 loan.setState(LoanState.FINISHED);
                 return;
             }
