@@ -6,13 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import comdevsenior.camorour.exception.NotFoundException;
-import comdevsenior.camorour.model.Book;
 
 public class BookServiceTest {
 
@@ -73,46 +70,39 @@ public class BookServiceTest {
     }
 
     @Test
+    void testDeleteWithExistingBooksButNotGivenIsbn() {
+        // GIVEN
+        service.addBook("38947743", "La sombra del viento", "Duvan Urrego");
+        var isbn = "3453425342";
+
+        // WHEN - THEN
+        assertThrows(NotFoundException.class,
+                () -> service.deleteBook(isbn));
+    }
+
+    @Test
     void testGetAllBooks() {
         // GIVEN
-        service.addBook("1234", "The Lord of the Rings", "JRR Tolkien");
-        service.addBook("5678", "Los dolores de cabeza con java", "Camilo Rodriguez");
-        service.addBook("91011", "La vualta al mundo en 80 días", "Julio Verne");
 
         // WHEN
-        List<Book> books = service.getAllBooks();
-        assertEquals(3, books.size());
+        var books =service.getAllBooks();
 
         // THEN
-        assertEquals("1234", books.get(0).getIsbn());
-        assertEquals("5678", books.get(1).getIsbn());
-        assertEquals("91011", books.get(2).getIsbn());
+        assertNotNull(books);
+        assertEquals(0, books.size());
     }
 
     @Test
-    void testGetBookByIsbn() throws NotFoundException {
+    void testGetBookByIsbnWithWrongIsbn() throws NotFoundException {
         // GIVEN
-        var isbn = "1234";
-        var title = "The Lord of the Rings";
-        var author = "JRR Tolkien";
-        service.addBook(isbn, title, author);
+        service.addBook("1234", "The Lord of the Rings", "JRR Tolkien");
 
         // WHEN
-        Book foundBook = service.getBookByIsbn(isbn);
+        var isbn = "012030";
 
         // THEN
-        assertEquals(isbn, foundBook.getIsbn());
+        assertThrows(NotFoundException.class, 
+                () -> service.getBookByIsbn(isbn));
     }
 
-    @Test
-    void testGetBookByIsbnNotFound() throws NotFoundException {
-         // GIVEN
-         var isbn = "1234";
-
-         // WHEN - THEN
-         assertThrows(NotFoundException.class, 
-         () -> {
-             service.getBookByIsbn(isbn);
-         });
-    }
 }

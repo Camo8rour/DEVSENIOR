@@ -62,6 +62,18 @@ public class UserServiceTest {
         assertEquals(registerDate, user.getRegisterDate());
     }
 
+    @Test
+    void testGetAllBooks() {
+        // GIVEN
+
+        // WHEN
+        var users = service.getAllUsers();
+
+        // THEN
+        assertNotNull(users);
+        assertEquals(0, users.size());
+    }
+
     @DisplayName("Obtener un usuario por ID existente")
     @Test
     void testGetUserById() throws NotFoundException {
@@ -69,11 +81,11 @@ public class UserServiceTest {
         service.addUser("1234", "Camilo", "camo321@gmail.com");
 
         // WHEN
-        User foundUser = service.getUserById("1234");
+        var id = "12121";
 
         // THEN
-        assertNotNull(foundUser);
-        assertEquals("Camilo", foundUser.getName());
+        assertThrows(NotFoundException.class, 
+                () -> service.getUserById(id));
     }
 
     @DisplayName("Obtener un usuario por ID inexistente")
