@@ -1,5 +1,11 @@
-# Pruebas unitarias con Mockito
+# Clase 22
+## Pruebas unitarias con Mockito 
 Se hacen pruebas unitarias con la implementación del framework, donde se crean objetos simulados en `LoanUser` con `BookService` y `UserService`.
+
+# Clase 23
+## Jacoco en tests.
+Se mide la cobertura de pruebas para identificar código no probado y mejorar la calidad del software.
+
 
 # Proyecto de Gestión de Préstamos de Libros
 
