@@ -1,3 +1,5 @@
+# EJERCICIOS - CLASE 7 🎓
+
 # Juegos en Java: Triqui, Ahorcado y Conecta 4
 
 Este repositorio contiene tres juegos clásicos implementados en Java: **Triqui**, **Ahorcado** y **Conecta 4**. Cada juego está implementado en su respectiva carpeta, y el archivo principal que gestiona la ejecución de estos juegos es **App.java**.

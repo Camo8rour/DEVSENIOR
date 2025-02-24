@@ -1,3 +1,5 @@
+# EJERCICIOS - CLASE 8 🖋️
+
 # Calculadora de Inventario
 
 El objetivo de este proyecto es desarrollar una aplicación de consola en Java que funcione como una calculadora de inventario para una pequeña tienda. La aplicación permitirá al usuario gestionar productos, incluyendo la adición, visualización, búsqueda, actualización y análisis del inventario. Este proyecto está diseñado para practicar conceptos básicos de programación en Java, así como introducir funciones anónimas (lambdas).

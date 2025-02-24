@@ -1,4 +1,4 @@
-# 📘 Ejercicios
+# EJERCICIOS - CLASE 5 📑
 
 Esta colección incluye una serie de ejercicios que abordan problemas específicos y proporcionan una breve descripción de las soluciones implementadas.
 

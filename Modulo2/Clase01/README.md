@@ -1,4 +1,4 @@
-# 💻 Explicación del Programa
+# EJERCICIOS - CLASE 1 💻
 
 ## 📂 Clase `Student`
 La clase `Student` es el núcleo del programa y define las características y comportamiento de los estudiantes.

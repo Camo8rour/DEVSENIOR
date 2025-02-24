@@ -1,3 +1,5 @@
+# EJERCICIOS - CLASE 18 y 19 📚
+
 # Ejercicios mejorados de excepciones y manejo de errores.
 
 ## [Sistema de Gestión de Clientes y Pedidos](clientes-pedidos)

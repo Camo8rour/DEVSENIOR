@@ -1,4 +1,4 @@
-# 📘 Ejercicios
+# EJERCICIOS - CLASE 4 📘
 
 Esta colección incluye una serie de ejercicios que aborda un problema específico y proporciona una breve descripción de la solución implementada.
 

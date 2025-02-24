@@ -38,7 +38,7 @@ public class LoanServiceTest {
         // GIVEN
         var id = "1234";
         var isbn = "1111";
-        var mockUser = new User(id, "Duvan", "camo321@gmail.com");
+        var mockUser = new User(id, "Camilo", "camo321@gmail.com");
         var mockBook = new Book(isbn, "The Lord of the Rings", "JRR Tolkien");
 
         Mockito.when(userService.getUserById(id)).thenReturn(mockUser);

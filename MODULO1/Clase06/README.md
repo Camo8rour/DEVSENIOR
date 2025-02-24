@@ -1,4 +1,4 @@
-# Ejercicios
+# # EJERCICIOS - CLASE 6 📖
 
 ## Ejercicio 1 - Análisis de Ventas de una Tienda
 Eres un analista de datos en una tienda de comercio electrónico. La tienda tiene un registro de todas las ventas realizadas durante el último mes. Cada venta está representada por una cadena de texto que contiene el nombre del producto, la cantidad vendida y el precio unitario, separados por comas. Tu tarea es procesar estos datos para obtener información útil.

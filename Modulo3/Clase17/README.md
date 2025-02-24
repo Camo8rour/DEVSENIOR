@@ -1,3 +1,5 @@
+# EJERCICIOS - CLASE 17 🖋️
+
 # Ejercicios de excepciones y manejo de errores.
 
 ## Ejercicio 1️⃣ - Sistema de Gestión de Inventario
